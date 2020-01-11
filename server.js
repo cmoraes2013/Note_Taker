@@ -14,11 +14,11 @@ app.use(express.static("public"));
 
 //HTML Routes
 app.get("/notes", function (req, res){
-    res.sendFile(path.join(__dirname, "notes.html"));
+    res.sendFile(path.join(__dirname, "public/notes.html"));
     console.log("Notes!!");
 });
 app.get("/", function (req, res){
-    res.sendFile(path.join(__dirname, "index.html"));
+    res.sendFile(path.join(__dirname, "public/index.html"));
     console.log("Home!!");
 });
 
@@ -34,12 +34,12 @@ app.get("/", function (req, res){
 //     res.sendFile(path.join(__dirname, "/db/db.json"));
 // });
 // -----ATTEMPT 3-----
-app.get("/api/notes", function (req, res) {
-    fs.readFile( __dirname + "/" + "db.json", 'utf8', function (err, data) {
-       console.log( data );
-       res.end( data );
-    });
- })
+// app.get("/api/notes", function (req, res) {
+//     fs.readFile( __dirname + "/" + "db.json", 'utf8', function (err, data) {
+//        console.log( data );
+//        res.end( data );
+//     });
+//  })
 
 
 
@@ -55,13 +55,13 @@ app.post("/api/notes", (res)=> {
 })
 })
 
-// app.delete("/api/notes/:id", ()=> {
-//     //how they grab of the id from the front end-- 
-//     fs.readFile
-//     fs.writeFile
-//     //when the data comes in your need to add a property and value to id that is not repeated//
+app.delete("/api/notes/:id", ()=> {
+    //how they grab of the id from the front end-- 
+    fs.readFile
+    fs.writeFile
+    //when the data comes in your need to add a property and value to id that is not repeated//
     
-// })
+})
 
 
 
